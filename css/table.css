@@ -1,0 +1,38 @@
+.tbn{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+.tbn td,.tbn th{
+    width:70px;
+    height:50px;
+    border:1px;
+}
+
+.tbn th{
+    background:#5495ff;
+    height:30px;
+    color: #000;
+}
+
+.tbn td{
+    background:#cee1ff;
+}
+
+.tbntitle{
+    text-align: center;
+}
+
+#tbn2{
+    text-align: center;
+}
+
+#tdn2 th{
+    text-align: center;
+    font-weight: normal;
+}
+
+#tdn2 td{
+    padding-left:5px;
+    padding-right:5px;
+}

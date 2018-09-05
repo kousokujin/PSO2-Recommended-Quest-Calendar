@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/table.css">
+        <link rel="stylesheet" type="text/css" href="css/theme.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/mainscript.js"></script>
+        <script type="text/javascript" src="scripts/recommandQuest.js"></script>
+
+        <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+        <!--Twitterカードなど-->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@highsokujin" />
+        <meta property="og:url" content="http://recommandpso2.kousokujin.com" />
+        <meta property="og:title" content="PSO2 Recommended Quest Calendar" />
+        <meta property="og:description" content="PSO2のおすすめクエストのカレンダーです。" />
+        <meta property="og:image" content="https://recommandpso2.kousokujin.com/icon.jpg" />
+
+        <title>PSO2 Recommended Quest Calendar</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <h1>PSO2 Recommended Quest Calendar</h1>
+            </div>
+            <div id="main">
+                <div class="content">
+                    <table>
+                        <tr>
+                            <td>
+                                <h3>今日のおすすめクエスト</h3>
+                            </td>
+                            <td id="todayquest">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="content">
+                    <div id="selectdate">
+                        日付を選択
+                        <select name="Year" id="year">
+                        </select>
+                        年
+                        <select name="Month" id="month">
+                        </select>
+                        月
+                    </div>
+                    <div class="tbntitle">
+                        <h3>2018/8</h2>
+                    </div>
+                    <table class="tbn">
+                        <tr>
+                            <th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="content">
+                    <table id="tdn2">
+                        <tr>
+                            <th>
+                                <div class=theme1>暗影</div>
+                            </th>
+                            <td>
+                                暗影渦巻く壊れた世界
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class=theme2>凶鳥</div>
+                            </th>
+                            <td>
+                                境界を貫く双角の凶鳥
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class=theme3>導く</div>
+                            </th>
+                            <td>
+                                混沌導く闇の化身
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class=theme4>産み出す</div>
+                            </th>
+                            <td>
+                                混沌産み出す闇の化身
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="theme5">喚び出す</div>
+                            </th>
+                            <td>
+                                混沌喚び出す龍の咆哮
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="content">
+                    <h3>このサイトについて</h3>
+                    <ul>
+                        <li>このサイトはPSO2のおすすめクエストの予想をするサイトです。</li>
+                        <li>プログラムで自動生成してるので、おすすめクエストは実際とは異なる場合がございます。</li>
+                        <li>要望・不具合は<a href="http://twitter.com/highsokujin">@highsokujin</a>までお願いします。</li>
+                        <li>暗影渦巻く壊れた世界の日などを通知する<a href="http://twitter.com/AneiBot">暗影bot</a>もあります。</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="footer">
+                    Copyright (C) 2018 kousokujin.
+            </div>
+        </div>
+</html>
