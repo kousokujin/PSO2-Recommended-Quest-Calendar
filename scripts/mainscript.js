@@ -92,7 +92,7 @@ function drawCalendar(year,month){
     var i=0
     $("table.tbn tbody td").each(function(){
         if(cld[i] != 0){
-            var time = new Date(year,month,cld[i],0,0,0,0)
+            var time = new Date(year,month-1,cld[i],0,0,0,0)
             var index = getRecomQuest(time)
             var name = getQuestName(index)
             var theme = "theme" + (index+1);
