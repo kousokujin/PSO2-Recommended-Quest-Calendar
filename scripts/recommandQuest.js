@@ -7,8 +7,19 @@ function destanceEpoch(time){
 }
 
 function getRecomQuest(time){
-    var deff = destanceEpoch(time)
-    return deff % 5
+
+    //2019/3/28-4/4までは全部暗影
+    var startANEI_20190328 = new Date(2019,2,28,0,0,0,0)
+    var endANEI_20190328 = new Date(2019,3,4,0,0,0,0)
+
+    if((startANEI_20190328 <= time) && (endANEI_20190328 > time)){
+        return 0
+    }
+    else{
+        var deff = destanceEpoch(time)
+        return deff % 5
+    }
+    //return deff % 5
 }
 
 function getQuestFullName(index){
