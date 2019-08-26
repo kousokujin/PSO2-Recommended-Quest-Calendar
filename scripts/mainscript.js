@@ -47,13 +47,13 @@ $(function(){
 function changeCalendar(){
     var y = $("select#year").val()
     var m = $("select#month").val()
-    $(".tbntitle h3").text(y + "年" + m+ "月")
+    $("#tbntitle h3").text(y + "年" + m+ "月")
     drawCalendar(y,m)
 }
 
 function drawCalendar(year,month){
     var cld = getCalendar(year,month);
-    var len = ($("table.tbn tbody").children().length)-1
+    var len = ($("table#tbn tbody").children().length)-1
     var cldrow = cld.length/7
     var speed = 100;
 
@@ -82,15 +82,16 @@ function drawCalendar(year,month){
 
     
     for(var i=0;i<len;i++){
-        $("table.tbn tbody tr:last").fadeOut(400);
-        $("table.tbn tbody tr:last").remove()
+        $("table#tbn tbody tr:last").fadeOut(400);
+        $("table#tbn tbody tr:last").remove()
     }
     for(var i=0;i<cldrow;i++){
-        $("table.tbn tbody").append("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></td>")
+        $("table#tbn tbody").append("<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></td>")
     }
 
     var i=0
-    $("table.tbn tbody td").each(function(){
+    var legend = []
+    $("table#tbn tbody td").each(function(){
         if(cld[i] != 0){
             var time = new Date(year,month-1,cld[i],0,0,0,0)
             var index = getRecomQuest(time)
@@ -99,9 +100,15 @@ function drawCalendar(year,month){
             /*$(this).html(cld[i] + "<br />" + name)*/
             $(this).append("<div class=day>"+cld[i]+"</div>")
             $(this).append("<div class="+theme+">"+name+"</div>")
+
+            if($.inArray(index,legend) == -1){
+                legend.push(index)
+            }
         }
         i++;
     })
+
+    drawLegend(legend)
 }
 
 function getCalendar(year,month){
@@ -132,4 +139,28 @@ function wait(time){
     while ((time2 -  time1)<time){
         time2 = new Date().getTime();
     }
+}
+
+function drawLegend(list){
+    var len = ($("table#tbn2 tbody").children().length)
+
+    for(var i=0;i<len;i++){
+        $("table#tbn2 tbody tr:last").fadeOut(400);
+        $("table#tbn2 tbody tr:last").remove()
+    }
+
+    list.sort(function(a,b){
+        if( a < b ) return -1;
+        if( a > b ) return 1;
+        return 0;
+    });
+
+    list.forEach(lst=>{
+        var themename = "theme"+(lst+1)
+        var shortname =  getQuestName(lst)
+        var longname = getQuestFullName(lst)
+
+        $("table#tbn2 tbody").append("<tr><th class="+themename+">"+shortname+"</th><td>"+longname+"</td></tr>")
+    })
+
 }
