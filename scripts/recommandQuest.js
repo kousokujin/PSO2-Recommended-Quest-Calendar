@@ -1,5 +1,6 @@
 var epoch = new Date(2018,4,31,0,0,0,0);
 var epoch2 = new Date(2019,7,20,0,0,0,0);
+var epoch3 = new Date(2020,2,2,0,0,0,0);
 
 function destanceEpoch(time,epoch){
     var SECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
@@ -21,7 +22,7 @@ function getRecomQuest(time){
     else　if(time < new Date(2019,7,21,0,0,0,0)){
         var deff = destanceEpoch(time,epoch)
         return deff % 5
-    }else{
+    }else if(time < new Date(2020,2,4,0,0,0)){
         var deff = destanceEpoch(time,epoch2) % 5
 
         switch(deff){
@@ -33,6 +34,21 @@ function getRecomQuest(time){
                 return 7
             default:
                 return deff %5;
+        }
+    }else{
+        var deff = destanceEpoch(time,epoch3) % 5
+
+        switch(deff){
+            case 1:
+                return 5;
+            case 2:
+                return 8;
+            case 3:
+                return 6;
+            case 4:
+                return 7;
+            default:
+                return deff;
         }
     }
     //return deff % 5
@@ -56,6 +72,8 @@ function getQuestFullName(index){
             return "戦塵を招く魔城の脅威";
         case 7:
             return "静寂に生まれし混沌"
+        case 8:
+            return "安寧を破りし超急の魔笛"
         default:
             return "";
 
@@ -79,7 +97,9 @@ function getQuestName(index){
         case 6:
             return "戦塵";
         case 7:
-            return "静寂"
+            return "静寂";
+        case 8:
+            return "魔笛";
         default:
             return "";
 
